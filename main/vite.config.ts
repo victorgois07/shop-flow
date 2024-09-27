@@ -15,10 +15,12 @@ export default defineConfig(() => {
       federation({
         name: "shopflowApp",
         remotes: {
-          shopflowCart: "http://localhost:3001/assets/remoteEntry.js",
-          shopflowFooter: "http://localhost:3003/assets/remoteEntry.js",
-          shopflowProductListing: "http://localhost:3004/assets/remoteEntry.js",
-          shopflowHeader: "http://localhost:3002/assets/remoteEntry.js",
+          shopflowCart: process.env["VITE_CART_REMOTE"] as string,
+          shopflowFooter: process.env["VITE_FOOTER_REMOTE"] as string,
+          shopflowProductListing: process.env[
+            "VITE_PRODUCT_LISTING_REMOTE"
+          ] as string,
+          shopflowHeader: process.env["VITE_HEADER_REMOTE"] as string,
         },
         shared: ["react", "react-dom"],
       }),
