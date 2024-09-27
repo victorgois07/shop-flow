@@ -5,8 +5,12 @@ function App() {
     <>
       <Cart
         cartItems={[]}
-        onCheckout={() => {
-          console.log("TESTE");
+        isDrawerOpen={false}
+        toggleDrawer={function (): void {
+          throw new Error("Function not implemented.");
+        }}
+        handleRemoveItem={function (id: number): void {
+          throw new Error("Function not implemented.");
         }}
       />
     </>

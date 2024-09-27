@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#headerbg {
+    background-color: #02D72F;
+    box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.1);
+  }
+  

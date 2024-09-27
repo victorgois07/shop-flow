@@ -1,12 +1,24 @@
+import "../../index.css";
+import CartButton from "../CartButton";
 import Logo from "./logo.svg?react";
 
-const Header = () => {
+export type HeaderProps = {
+  isSidebarOpen: boolean;
+  setSidebar: (value: boolean) => void;
+  itemCount: number;
+};
+
+const Header = ({ isSidebarOpen, setSidebar, itemCount }: HeaderProps) => {
   return (
-    <header className="bg-green-500 p-4 flex justify-between items-center">
-      <Logo className="h-8" />
-      <button className="text-white p-2 rounded-full bg-gray-800">
-        <span className="material-icons">shopping_cart</span>
-      </button>
+    <header
+      id="headerbg"
+      className="p-0 h-16 flex justify-between items-center"
+    >
+      <Logo className="ml-12" />
+      <CartButton
+        onClick={() => setSidebar(!isSidebarOpen)}
+        itemCount={itemCount}
+      />
     </header>
   );
 };

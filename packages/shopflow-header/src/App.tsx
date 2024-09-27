@@ -3,7 +3,12 @@ import { Header } from "./components";
 function App() {
   return (
     <>
-      <Header />
+      <Header
+        isSidebarOpen={false}
+        setSidebar={function (value: boolean): void {
+          throw new Error("Function not implemented.");
+        }}
+      />
     </>
   );
 }

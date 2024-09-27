@@ -1,17 +1,21 @@
 /// <reference types="vite/client" />
 declare module "shopflowCart/Cart" {
-  const CounterAppOne: React.ComponentType;
-  export default Cart;
+  import shopflowCart from "shopflow-cart";
+  export default shopflowCart.Cart;
 }
 declare module "shopflowCart/CartItem" {
-  const CounterAppOne: React.ComponentType;
-  export default CounterAppOne;
+  import shopflowCart from "shopflow-cart";
+  export default shopflowCart.CartItem;
 }
 declare module "shopflowFooter/Footer" {
-  const CounterAppOne: React.ComponentType;
-  export default CounterAppOne;
+  const component: React.ComponentType<any>;
+  export default component;
 }
 declare module "shopflowHeader/Header" {
-  const CounterAppOne: React.ComponentType;
-  export default CounterAppOne;
+  const component: React.ComponentType<any>;
+  export default component;
+}
+declare module "shopflowProductListing/ProductList" {
+  const component: React.ComponentType<any>;
+  export default component;
 }

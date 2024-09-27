@@ -1,4 +1,0 @@
-{
-  "watch": ["src/**/*.{ts,tsx,js,jsx}"],
-  "exec": "tsc -b && vite build && vite preview"
-}

@@ -17,6 +17,7 @@ export default defineConfig(() => {
         remotes: {
           shopflowCart: "http://localhost:3001/assets/remoteEntry.js",
           shopflowFooter: "http://localhost:3003/assets/remoteEntry.js",
+          shopflowProductListing: "http://localhost:3004/assets/remoteEntry.js",
           shopflowHeader: "http://localhost:3002/assets/remoteEntry.js",
         },
         shared: ["react", "react-dom", "shopflow-shared"],

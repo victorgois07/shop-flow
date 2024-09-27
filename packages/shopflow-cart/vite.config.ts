@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import path from "path";
 import tailwindcss from "tailwindcss";
 import { defineConfig } from "vite";
+import svgr from "vite-plugin-svgr";
 
 export default defineConfig(() => {
   dotenv.config({ path: path.resolve(__dirname, "../../.env") });
@@ -12,6 +13,7 @@ export default defineConfig(() => {
   return {
     plugins: [
       react(),
+      svgr(),
       federation({
         name: "shopflow-cart",
         filename: "remoteEntry.js",
@@ -19,13 +21,7 @@ export default defineConfig(() => {
           "./Cart": "./src/components/Cart",
           "./CartItem": "./src/components/CartItem",
         },
-        shared: [
-          "react",
-          "react-dom",
-          "shopflow-shared",
-          "react-virtualized",
-          "tailwindcss",
-        ],
+        shared: ["react", "react-dom", "shopflow-shared", "tailwindcss"],
       }),
     ],
     build: {

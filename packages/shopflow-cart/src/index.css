@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.cart-item {
+  border: 1px solid #00aa13;
+  border-radius: 8px;
+}

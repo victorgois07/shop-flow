@@ -1,9 +1,14 @@
-import { StrictMode } from "react";
+import { lazy, StrictMode, Suspense } from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App.tsx";
+import Backdrop from "./components/Backdrop";
+import "./index.css";
+
+const App = lazy(() => import("./App"));
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <App />
+    <Suspense fallback={<Backdrop show />}>
+      <App />
+    </Suspense>
   </StrictMode>
 );

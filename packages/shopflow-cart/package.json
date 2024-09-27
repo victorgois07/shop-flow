@@ -6,15 +6,16 @@
   "main": "src/components/index.ts",
   "scripts": {
     "dev": "vite --strictPort",
-    "build": "tsc && vite build",
+    "build": "tsc -b && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview --strictPort",
-    "build:preview": "nodemon"
+    "build:preview": "node watch.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-virtualized": "^9.22.5"
+    "vite-plugin-svgr": "^4.2.0",
+    "shopflow-product-listing": "workspace:*"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
