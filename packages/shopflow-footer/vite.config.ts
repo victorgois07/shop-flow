@@ -20,7 +20,7 @@ export default defineConfig(() => {
         exposes: {
           "./Footer": "./src/components/Footer",
         },
-        shared: ["react", "react-dom", "shopflow-shared", "tailwindcss"],
+        shared: ["react", "react-dom", "tailwindcss"],
       }),
     ],
     build: {

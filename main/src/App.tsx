@@ -1,7 +1,5 @@
 import { lazy, useState } from "react";
-import { Provider } from "react-redux";
 import { ProductApi } from "shopflow-product-listing";
-import { store } from "shopflow-shared";
 import { LazyWrapper, Toast } from "./components";
 
 const Cart = lazy(() => import("shopflowCart/Cart"));
@@ -77,28 +75,26 @@ function App() {
   };
 
   return (
-    <Provider store={store}>
-      <div className="grid grid-rows-[auto_1fr_auto] w-full h-full">
-        <LazyWrapper
-          importPath={() => import("shopflowHeader/Header")}
-          componentProps={headerProps}
-        />
-        <LazyWrapper
-          importPath={() => import("shopflowProductListing/ProductList")}
-          componentProps={{ onSelectProduct }}
-        />
-        <Cart
-          cartItems={cartItems}
-          setCartItems={setCartItems}
-          isDrawerOpen={isSidebarOpen}
-          toggleDrawer={toggleDrawer}
-          handleRemoveItem={handleRemoveItem}
-          onFinishSale={onFinishSale}
-        />
-        <LazyWrapper importPath={() => import("shopflowFooter/Footer")} />
-        {showToast && <Toast message={toastMessage} />}
-      </div>
-    </Provider>
+    <div className="grid grid-rows-[auto_1fr_auto] w-full h-full">
+      <LazyWrapper
+        importPath={() => import("shopflowHeader/Header")}
+        componentProps={headerProps}
+      />
+      <LazyWrapper
+        importPath={() => import("shopflowProductListing/ProductList")}
+        componentProps={{ onSelectProduct }}
+      />
+      <Cart
+        cartItems={cartItems}
+        setCartItems={setCartItems}
+        isDrawerOpen={isSidebarOpen}
+        toggleDrawer={toggleDrawer}
+        handleRemoveItem={handleRemoveItem}
+        onFinishSale={onFinishSale}
+      />
+      <LazyWrapper importPath={() => import("shopflowFooter/Footer")} />
+      {showToast && <Toast message={toastMessage} />}
+    </div>
   );
 }
 

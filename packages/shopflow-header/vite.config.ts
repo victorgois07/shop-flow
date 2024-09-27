@@ -20,7 +20,7 @@ export default defineConfig(() => {
         exposes: {
           "./Header": "./src/components/Header",
         },
-        shared: ["react", "react-dom", "shopflow-shared", "tailwindcss"],
+        shared: ["react", "react-dom", "tailwindcss"],
       }),
     ],
     build: {

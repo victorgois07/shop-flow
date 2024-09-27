@@ -8,13 +8,12 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "build:preview": "dotenv -e ../../.env -- tsc -b && vite build && vite preview --watch --port $VITE_CART_PORT",
-    "build:preview:watch": "chokidar \"src/**/*.{ts,tsx,js,jsx}\" -c \"pnpm build:preview\""
+    "build:preview": "node watch.mjs",
+    "build:start": "vite build && vite preview"
   },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "shopflow-shared": "workspace:*",
     "shopflow-cart": "workspace:*",
     "shopflow-product-listing": "workspace:*"
   },

@@ -20,7 +20,7 @@ export default defineConfig(() => {
           shopflowProductListing: "http://localhost:3004/assets/remoteEntry.js",
           shopflowHeader: "http://localhost:3002/assets/remoteEntry.js",
         },
-        shared: ["react", "react-dom", "shopflow-shared"],
+        shared: ["react", "react-dom"],
       }),
     ],
     build: {

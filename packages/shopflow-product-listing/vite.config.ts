@@ -18,7 +18,7 @@ export default defineConfig(() => {
         exposes: {
           "./ProductList": "./src/components/ProductList",
         },
-        shared: ["react", "react-dom", "shopflow-shared", "tailwindcss"],
+        shared: ["react", "react-dom", "tailwindcss"],
       }),
     ],
     build: {

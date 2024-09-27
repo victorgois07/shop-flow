@@ -26,7 +26,6 @@ const LazyWrapper = <T,>({
   useEffect(() => {
     if (import.meta.hot) {
       import.meta.hot.accept((_) => {
-        console.log("🔄 Refreshing component...");
         retryComponent();
       });
     }

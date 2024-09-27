@@ -21,7 +21,7 @@ export default defineConfig(() => {
           "./Cart": "./src/components/Cart",
           "./CartItem": "./src/components/CartItem",
         },
-        shared: ["react", "react-dom", "shopflow-shared", "tailwindcss"],
+        shared: ["react", "react-dom", "tailwindcss"],
       }),
     ],
     build: {

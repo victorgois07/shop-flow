@@ -50,7 +50,6 @@ function runPackageTask(pkg, taskType) {
   });
 }
 
-// Função para rodar o dev do main em paralelo
 async function runMainDev() {
   console.log(chalk.blue(`Iniciando o dev do main...`));
   return concurrently([
@@ -62,12 +61,10 @@ async function runMainDev() {
   ]).result;
 }
 
-// Função para iniciar o processo de build e preview em paralelo
 async function runBuildAndPreview() {
   const buildTasks = packages.map((pkg) => runPackageTask(pkg, "build"));
   const previewTasks = packages.map((pkg) => runPackageTask(pkg, "preview"));
 
-  // Executar todas as tarefas em paralelo
   await Promise.all([...buildTasks, ...previewTasks]);
 
   console.log(
@@ -75,10 +72,8 @@ async function runBuildAndPreview() {
   );
 }
 
-// Função para rodar o dev e preview em paralelo
 async function runDevAndPreview() {
   try {
-    // Perguntar ao usuário o que ele quer executar
     const answers = await inquirer.prompt([
       {
         type: "checkbox",
